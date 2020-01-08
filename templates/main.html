@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Example</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<p>It works!</p>
+
+<p>Variable value: {{ variable }}</p>
+
+{# This is a comment #}
+
+{# Use can use "if"s, "for loops" and other constructs using '{% %}' directives #}
+{% if variable > 0 %}
+<p>Variable is negative!</p>
+{% endif %}
+
+<p>
+{# content of '{{ }}' can be any Python expression; also see jinja2 "filters" #}
+Absolute value: {{ -variable if variable < 0 else variable }}<br>
+Reversed: {{ variable|abs|string|reverse }}
+</p>
+
+
+</body>
+</html>
