@@ -1,20 +1,11 @@
 This is a simple example and quick-start template for micro web sites and services in Flask.
 
-
-To get it running (on CentOS 7), install Apache and mod_wsgi with Python3.x support:
-
+Quick start for development:
 ```
-yum install epel-release
-yum install python36 python36-devel httpd httpd-devel gcc
-
-pip3 install mod_wsgi
-mod_wsgi-express install-module > /etc/httpd/conf.modules.d/02-wsgi.conf
-
 pip3 install flask
+
+FLASK_APP=template.py FLASK_ENV=development flask run
 ```
 
-Quick start for testing (creates a temporary Apache config in /tmp and runs the server on port 8000):
+For production, use Apache with mod_wsgi ([example configuration](apache.conf)), nginx with uWSGI, or any other WSGI compatible server.
 
-```
-mod_wsgi-express start-server wsgi_script.py
-```
